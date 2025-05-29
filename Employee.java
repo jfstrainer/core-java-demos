@@ -1,28 +1,18 @@
-package gnc;
+package streamapi;
 
-public class Employee implements Comparable<Employee> {
+public class Employee {
 
-	private int id;
 	private String name;
-	private int age;
+	private String dept;
+	private double salary;
 	
-	public Employee() {
+	public Employee() { }
+	
+	public Employee(String name, String dept, double salary) {
 		super();
-	}
-
-	public Employee(int id, String name, int age) {
-		super();
-		this.id = id;
 		this.name = name;
-		this.age = age;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
+		this.dept = dept;
+		this.salary = salary;
 	}
 
 	public String getName() {
@@ -33,23 +23,26 @@ public class Employee implements Comparable<Employee> {
 		this.name = name;
 	}
 
-	public int getAge() {
-		return age;
+	public String getDept() {
+		return dept;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setDept(String dept) {
+		this.dept = dept;
 	}
 
-	
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+
 	@Override
 	public String toString() {
-		return "\nEmployee [id=" + id + ", name=" + name + ", age=" + age + "]";
+		return "\nEmployee [name=" + name + ", dept=" + dept + ", salary=" + salary + "]";
 	}
-
-	@Override
-	public int compareTo(Employee emp) {
-		return this.id - emp.id;
-	}
-
+	
+	
 }
